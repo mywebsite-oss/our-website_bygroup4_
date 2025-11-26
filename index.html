@@ -1,0 +1,1649 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bali - Landing Page</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Great+Vibes&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.cdnfonts.com/css/rumble-brave"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1w0v2QbsM7mtq0gqIY7YtG7x1Ymgdg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      :root {
+        --bg: #e8f2f6;
+        --nav-height: 88px;
+        --text-dark: #1d1d1d;
+        --text-light: #f7f7f7;
+        --accent: #0b5d68;
+        --card-shadow: 0 25px 60px rgba(9, 30, 66, 0.25);
+        --display-font: "Rumble Brave", "Playfair Display", serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+        background: var(--bg);
+        color: var(--text-dark);
+      }
+
+      .main-header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        width: 100%;
+        background: rgba(232, 242, 246, 0.92);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        box-shadow: 0 12px 30px rgba(18, 55, 80, 0.08);
+      }
+
+      .nav-inner {
+        height: var(--nav-height);
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      
+      .page-wrapper {
+        max-width: 1380px;
+        margin: 0 auto;
+        padding: 0 16px 96px;
+      }
+
+      .brand-mark {
+        font-family: "Great Vibes", "Playfair Display", serif;
+        font-size: 42px;
+        letter-spacing: 4px;
+        color: #0d2136;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 32px;
+        padding: 0;
+        margin: 0;
+        font-size: 16px;
+        letter-spacing: 0.02em;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #111;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      nav a:hover {
+        color: #1a6d7b;
+      }
+
+      nav a.disabled {
+        color: #7d8b93;
+        pointer-events: none;
+        cursor: default;
+      }
+
+      .search-box {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .search-input {
+        height: 44px;
+        border-radius: 22px;
+        border: 1px solid transparent;
+        padding: 0 18px;
+        font-size: 15px;
+        outline: none;
+        width: 0;
+        opacity: 0;
+        transition: width 0.4s ease, opacity 0.3s ease, border 0.3s ease;
+      }
+
+      .search-input.open {
+        width: 180px;
+        opacity: 1;
+        border-color: rgba(15, 86, 102, 0.35);
+        background: #fdfdfd;
+      }
+
+      .search-trigger {
+        width: 46px;
+        height: 46px;
+        border-radius: 16px;
+        border: 1px solid #111;
+        background: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: border-color 0.3s ease, transform 0.2s ease;
+      }
+
+      .search-trigger:hover {
+        border-color: #237a84;
+        transform: translateY(-2px);
+      }
+
+      .hero {
+        margin-top: 48px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .hero-panel {
+        width: 100%;
+        min-height: 540px;
+        border-radius: 48px;
+        background-image: linear-gradient(
+            145deg,
+            rgba(9, 43, 58, 0.7),
+            rgba(9, 58, 47, 0.15)
+          ),
+          url("page1/backround.png");
+        background-size: cover;
+        background-position: center;
+        box-shadow: var(--card-shadow);
+        padding: 64px 80px;
+        display: flex;
+        gap: 56px;
+        transition: background-size 0.6s ease, background-position 0.6s ease;
+        overflow: hidden;
+      }
+
+      .hero-panel:hover {
+        background-size: 110%;
+        background-position: center;
+      }
+
+      .hero-content {
+        flex: 1;
+        color: var(--text-light);
+        max-width: 520px;
+      }
+
+      .hero-content h1 {
+        font-family: var(--display-font);
+        font-size: 120px;
+        margin: 0 0 16px;
+        letter-spacing: 4px;
+      }
+
+      .hero-content p {
+        font-size: 18px;
+        line-height: 1.8;
+        margin: 0 0 32px;
+        color: #f2f6f8;
+      }
+
+      .hero-content p strong {
+        font-weight: 700;
+      }
+
+      .social-list {
+        display: flex;
+        gap: 18px;
+        margin-top: 24px;
+      }
+
+      .social-btn {
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        border: none;
+        background: #f5f7f8;
+        color: #0b1720;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 18px 35px rgba(16, 16, 16, 0.25);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        padding: 0;
+        overflow: hidden;
+      }
+
+      .social-btn img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        padding: 12px;
+      }
+
+      .social-btn:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 25px 45px rgba(7, 15, 18, 0.35);
+      }
+
+      .card-stack {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        min-height: 300px;
+      }
+
+      .info-card {
+        position: absolute;
+        width: 220px;
+        height: 280px;
+        border-radius: 36px;
+        background: #fff;
+        box-shadow: 0 25px 65px rgba(0, 0, 0, 0.25);
+      }
+
+      .info-card:nth-child(1) {
+        transform: rotate(-10deg) translate(-120px, -20px);
+      }
+
+      .info-card:nth-child(2) {
+        transform: translate(0, 0);
+      }
+
+      .info-card:nth-child(3) {
+        transform: rotate(12deg) translate(130px, 25px);
+      }
+
+      .ethnic-section {
+        margin-top: 96px;
+        text-align: center;
+      }
+
+      .section-heading {
+        font-family: var(--display-font);
+        font-size: 72px;
+        color: #0d1a2b;
+        margin-bottom: 32px;
+      }
+
+      .ethnic-grid {
+        display: flex;
+        gap: 28px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 32px;
+      }
+
+      .ethnic-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        width: 225px;
+        transition: transform 0.3s ease;
+      }
+
+      .ethnic-item:nth-child(2),
+      .ethnic-item:nth-child(4) {
+        margin-top: 32px;
+      }
+
+      .ethnic-item:hover {
+        transform: translateY(-6px);
+      }
+
+      .ethnic-card {
+        width: 100%;
+        height: 300px;
+        border-radius: 30px;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 20px 45px rgba(17, 29, 36, 0.25);
+        position: relative;
+      }
+
+      .ethnic-card {
+        overflow: hidden;
+      }
+
+      .ethnic-card img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.5s ease, filter 0.5s ease;
+      }
+
+      .ethnic-card:hover img {
+        transform: scale(1.15) rotate(2deg);
+        filter: brightness(1.1);
+      }
+
+      .ethnic-card h3 {
+        position: absolute;
+        bottom: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+        color: #fff;
+        font-size: 20px;
+        font-weight: 600;
+        text-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+      }
+
+      .card-btn {
+        padding: 10px 24px;
+        border-radius: 24px;
+        border: none;
+        background: #2b6d8c;
+        color: #f5f9fd;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 12px 25px rgba(20, 51, 81, 0.35);
+      }
+
+      .ethnic-description {
+        max-width: 780px;
+        margin: 0 auto;
+        font-size: 16px;
+        line-height: 1.8;
+        color: #0d1a2b;
+      }
+
+      .ethnic-description strong {
+        font-weight: 700;
+      }
+
+      .religion-section {
+        margin-top: 120px;
+        display: flex;
+        gap: 64px;
+        align-items: center;
+      }
+
+      .religion-img-wrapper {
+        width: 420px;
+        height: 520px;
+        border-radius: 18px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 35px 45px rgba(13, 25, 37, 0.3);
+      }
+
+      .religion-img-wrapper {
+        overflow: hidden;
+      }
+
+      .religion-img-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.7s ease, filter 0.7s ease;
+      }
+
+      .religion-img-wrapper:hover img {
+        transform: scale(1.12);
+        filter: brightness(1.15) saturate(1.2);
+      }
+
+      .slide-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: none;
+        background: rgba(255, 255, 255, 0.9);
+        color: #0b2634;
+        font-size: 20px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 15px 25px rgba(12, 24, 36, 0.25);
+      }
+
+      .slide-btn.prev {
+        left: 16px;
+      }
+
+      .slide-btn.next {
+        right: 16px;
+      }
+
+      .religion-copy h2 {
+        font-family: var(--display-font);
+        font-size: 72px;
+        color: #0d2a46;
+        margin: 0 0 16px;
+      }
+
+      .religion-copy p {
+        font-size: 17px;
+        line-height: 1.9;
+        margin: 0;
+        max-width: 520px;
+        color: #0f1e2c;
+      }
+
+      .religion-copy p strong {
+        font-weight: 700;
+      }
+
+      .house-section {
+        margin-top: 120px;
+      }
+
+      .house-panel {
+        background: #061a3b;
+        border-radius: 36px;
+        padding: 72px 80px;
+        display: flex;
+        gap: 48px;
+        align-items: center;
+        box-shadow: 0 30px 60px rgba(4, 12, 31, 0.45);
+        width: 100%;
+      }
+
+      .house-visual {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+      }
+
+      .house-image {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border-radius: 28px;
+        overflow: hidden;
+        background: #f8fbff;
+        box-shadow: inset 0 0 0 1px rgba(6, 26, 59, 0.08);
+      }
+
+      .house-image {
+        overflow: hidden;
+      }
+
+      .house-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.8s ease, filter 0.8s ease;
+      }
+
+      .house-image:hover img {
+        transform: scale(0.95);
+        filter: brightness(1.2) contrast(1.1);
+      }
+
+      .house-btn {
+        border: none;
+        border-radius: 999px;
+        padding: 10px 32px;
+        font-weight: 600;
+        background: #6cb4d9;
+        color: #041226;
+        cursor: pointer;
+        box-shadow: 0 18px 45px rgba(26, 95, 131, 0.35);
+      }
+
+      .house-copy {
+        flex: 1;
+      }
+
+      .house-copy h2 {
+        font-family: var(--display-font);
+        font-size: 72px;
+        color: #f4f8fc;
+        margin: 0 0 18px;
+        line-height: 1;
+        text-align: center;
+      }
+
+      .house-copy p {
+        color: #dfe7f6;
+        line-height: 1.85;
+        font-size: 17px;
+        margin: 0;
+      }
+
+      .house-copy p strong {
+        font-weight: 700;
+        color: #ffffff;
+      }
+
+      .clothes-section {
+        margin-top: 120px;
+      }
+
+      .clothes-frame {
+        position: relative;
+        border: 3px solid #1d74d8;
+        border-radius: 34px;
+        padding: 64px 56px;
+        display: flex;
+        gap: 48px;
+        align-items: center;
+        background: #eef6fb;
+      }
+
+      .clothes-text {
+        flex: 1;
+      }
+
+      .clothes-text h2 {
+        font-family: var(--display-font);
+        font-size: 68px;
+        text-align: center;
+        color: #0b2c4d;
+        line-height: 1.05;
+        margin: 0 0 20px;
+      }
+
+      .clothes-text p {
+        font-size: 20px;
+        line-height: 1.9;
+        color: #111827;
+        margin: 0;
+      }
+
+      .clothes-text p strong {
+        font-weight: 700;
+      }
+
+      .clothes-image-wrap {
+        flex: 0 0 520px;
+        border-radius: 0 30px 30px 0;
+        overflow: hidden;
+        height: 560px;
+        margin: -52px -52px -52px -24px;
+        box-shadow: 0 25px 55px rgba(14, 36, 64, 0.35);
+      }
+
+      .clothes-image-wrap {
+        overflow: hidden;
+      }
+
+      .clothes-image-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.6s ease, filter 0.6s ease;
+        transform-origin: center;
+      }
+
+      .clothes-image-wrap:hover img {
+        transform: scale(1.2) translateX(-5%);
+        filter: brightness(1.1);
+      }
+
+      .art-section {
+        margin-top: 140px;
+        text-align: center;
+      }
+
+      .art-heading {
+        font-family: var(--display-font);
+        font-size: 76px;
+        color: #08233c;
+        margin-bottom: 28px;
+      }
+
+      .art-slider {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .slider-btn {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border: none;
+        background: #0f2f4c;
+        color: #f4f8fb;
+        font-size: 22px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 18px 35px rgba(8, 24, 40, 0.25);
+      }
+
+      .slider-btn:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+      }
+
+      .art-viewport {
+        flex: 1;
+        overflow: hidden;
+      }
+
+      .art-track {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .art-card {
+        background: #d9ebf1;
+        border-radius: 32px;
+        padding: 18px 18px 28px;
+        box-shadow: 0 20px 40px rgba(12, 36, 62, 0.15);
+        text-align: left;
+        min-height: 360px;
+      }
+
+      .art-image {
+        width: 100%;
+        height: 170px;
+        border-radius: 22px;
+        overflow: hidden;
+        margin-bottom: 12px;
+      }
+
+      .art-image {
+        overflow: hidden;
+      }
+
+      .art-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.5s ease, filter 0.5s ease;
+      }
+
+      .art-image:hover img {
+        transform: scale(1.2);
+        filter: brightness(1.25) saturate(1.3);
+      }
+
+      .art-card h3 {
+        font-size: 20px;
+        margin: 0;
+        color: #0f2f4c;
+      }
+
+      .art-card span {
+        font-size: 14px;
+        color: #38566f;
+        display: block;
+        margin-bottom: 6px;
+      }
+
+      .art-card p {
+        font-size: 15px;
+        line-height: 1.6;
+        color: #0d1b2a;
+        margin: 0;
+      }
+
+      .ritual-section {
+        margin-top: 140px;
+        text-align: center;
+      }
+
+      .ritual-heading {
+        font-family: var(--display-font);
+        font-size: 76px;
+        color: #08233c;
+        margin-bottom: 48px;
+      }
+
+      .ritual-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .ritual-card {
+        display: flex;
+        border-radius: 32px;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 20px 45px rgba(17, 29, 36, 0.25);
+        min-height: 280px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .ritual-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 25px 55px rgba(17, 29, 36, 0.35);
+      }
+
+      .ritual-text {
+        flex: 1;
+        background: #0f2f4c;
+        color: #f4f8fb;
+        padding: 32px 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+      }
+
+      .ritual-text h3 {
+        font-family: var(--display-font);
+        font-size: 42px;
+        margin: 0;
+        color: #ffffff;
+        line-height: 1.1;
+        letter-spacing: 2px;
+      }
+
+      .ritual-text span {
+        font-size: 14px;
+        color: #b8d4e8;
+        font-weight: 400;
+        text-transform: lowercase;
+        letter-spacing: 0.5px;
+        display: block;
+      }
+
+      .ritual-text h3 + span {
+        margin-top: 8px;
+      }
+
+      .ritual-text span + h3 {
+        margin-top: 8px;
+      }
+
+      .ritual-image {
+        flex: 1;
+        min-width: 200px;
+        overflow: hidden;
+        background: #e8f2f6;
+        position: relative;
+      }
+
+      .ritual-image::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(15, 47, 76, 0.3);
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      .ritual-image:hover::before {
+        opacity: 1;
+      }
+
+      .ritual-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.6s ease, filter 0.6s ease;
+      }
+
+      .ritual-image:hover img {
+        transform: scale(1.18);
+        filter: brightness(1.2) contrast(1.15);
+      }
+
+      @media (max-width: 992px) {
+        .page-wrapper {
+          padding: 0 20px 80px;
+        }
+
+        .section-heading {
+          font-size: 56px;
+        }
+
+        .ethnic-card {
+          width: 200px;
+        }
+
+        .religion-section {
+          flex-direction: column;
+          text-align: center;
+          gap: 40px;
+        }
+
+        .religion-img-wrapper {
+          width: 100%;
+          max-width: 500px;
+        }
+
+        .religion-copy h2 {
+          font-size: 56px;
+        }
+
+        .religion-copy p {
+          max-width: 100%;
+        }
+
+        .house-panel {
+          flex-direction: column;
+          padding: 56px 40px;
+          text-align: center;
+        }
+
+        .house-copy h2 {
+          font-size: 56px;
+        }
+
+        .clothes-frame {
+          flex-direction: column;
+          padding: 56px 40px;
+          text-align: center;
+        }
+
+        .clothes-image-wrap {
+          flex: none;
+          width: 100%;
+          border-radius: 30px;
+          margin: 0;
+          height: 380px;
+        }
+
+        .clothes-text h2 {
+          font-size: 56px;
+        }
+
+        .clothes-text p {
+          font-size: 18px;
+        }
+
+        .art-slider {
+          flex-direction: column;
+        }
+
+        .art-track {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .ritual-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
+        }
+
+        .ritual-heading {
+          font-size: 56px;
+        }
+
+        .ritual-text h3 {
+          font-size: 36px;
+        }
+
+        .hero-panel {
+          flex-direction: column;
+          padding: 48px 36px 72px;
+        }
+
+        .hero-content h1 {
+          font-size: 84px;
+        }
+
+        .card-stack {
+          min-height: 340px;
+        }
+
+        nav ul {
+          gap: 24px;
+          font-size: 15px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .page-wrapper {
+          padding: 0 16px 64px;
+        }
+
+        .section-heading {
+          font-size: 48px;
+        }
+
+        .art-heading,
+        .ritual-heading {
+          font-size: 48px;
+        }
+
+        .hero-content h1 {
+          font-size: 72px;
+        }
+
+        .religion-copy h2,
+        .house-copy h2,
+        .clothes-text h2 {
+          font-size: 48px;
+        }
+
+        .nav-inner {
+          padding: 0 20px;
+        }
+
+        nav ul {
+          gap: 20px;
+          font-size: 14px;
+        }
+
+        .hero-panel {
+          padding: 40px 32px 60px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .page-wrapper {
+          padding: 0 12px 48px;
+        }
+
+        .section-heading {
+          font-size: 40px;
+          margin-bottom: 24px;
+        }
+
+        .art-heading,
+        .ritual-heading {
+          font-size: 40px;
+          margin-bottom: 32px;
+        }
+
+        .ethnic-grid {
+          justify-content: space-between;
+          gap: 16px;
+        }
+
+        .ethnic-item {
+          flex: 1 1 calc(50% - 8px);
+          max-width: 280px;
+        }
+
+        .ethnic-card {
+          width: 100%;
+          height: 260px;
+        }
+
+        .ethnic-card img {
+          height: 260px;
+        }
+
+        .religion-section {
+          gap: 32px;
+        }
+
+        .religion-img-wrapper {
+          width: 100%;
+          max-width: 360px;
+          height: 420px;
+        }
+
+        .religion-copy h2 {
+          font-size: 40px;
+        }
+
+        .religion-copy p {
+          font-size: 15px;
+        }
+
+        .house-visual {
+          width: 100%;
+          max-width: 320px;
+        }
+
+        .house-panel {
+          padding: 40px 24px;
+          border-radius: 28px;
+        }
+
+        .house-copy h2 {
+          font-size: 40px;
+        }
+
+        .house-copy p {
+          font-size: 15px;
+        }
+
+        .clothes-frame {
+          padding: 40px 20px;
+          border-radius: 28px;
+        }
+
+        .clothes-image-wrap {
+          height: 300px;
+          border-radius: 24px;
+        }
+
+        .clothes-text h2 {
+          font-size: 40px;
+        }
+
+        .clothes-text p {
+          font-size: 15px;
+        }
+
+        .art-track {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+
+        .art-card {
+          min-height: 340px;
+        }
+
+        .ritual-grid {
+          grid-template-columns: 1fr;
+          gap: 18px;
+        }
+
+        .ritual-heading {
+          font-size: 40px;
+        }
+
+        .ritual-card {
+          flex-direction: column;
+          min-height: auto;
+        }
+
+        .ritual-text {
+          padding: 24px 20px;
+        }
+
+        .ritual-text h3 {
+          font-size: 32px;
+        }
+
+        .ritual-image {
+          min-height: 200px;
+        }
+
+        .nav-inner {
+          flex-direction: column;
+          gap: 16px;
+          height: auto;
+          padding: 20px 16px;
+        }
+
+        nav ul {
+          gap: 16px;
+          font-size: 14px;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .search-box {
+          width: 100%;
+          justify-content: center;
+        }
+
+        .search-input.open {
+          width: 100%;
+          max-width: 200px;
+        }
+
+        .hero {
+          margin-top: 32px;
+        }
+
+        .hero-panel {
+          border-radius: 28px;
+          padding: 32px 24px 48px;
+          min-height: 480px;
+        }
+
+        .hero-content h1 {
+          font-size: 56px;
+          letter-spacing: 2px;
+        }
+
+        .hero-content p {
+          font-size: 15px;
+          margin-bottom: 24px;
+        }
+
+        .social-list {
+          gap: 12px;
+          margin-top: 20px;
+        }
+
+        .social-btn {
+          width: 48px;
+          height: 48px;
+        }
+
+        .card-stack {
+          min-height: 280px;
+        }
+
+        .info-card {
+          width: 160px;
+          height: 200px;
+        }
+
+        .info-card:nth-child(1) {
+          transform: rotate(-8deg) translate(-80px, -15px);
+        }
+
+        .info-card:nth-child(3) {
+          transform: rotate(8deg) translate(80px, 15px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="nav-inner">
+        <div class="brand-mark">Bl</div>
+        <nav>
+          <ul>
+            <li><a href="#home">Home</a></li>
+              <li><a href="javascript:void(0)" class="disabled">Culture</a></li>
+              <li>
+                <a href="javascript:void(0)" class="disabled">Calender</a>
+              </li>
+          </ul>
+        </nav>
+        <div class="search-box">
+          <input
+            type="text"
+            class="search-input"
+            id="searchInput"
+            placeholder="Cari destinasi..."
+            aria-label="Cari"
+          />
+          <button class="search-trigger" id="searchBtn" aria-label="Cari">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="page-wrapper">
+      <main id="home" class="hero">
+        <article class="hero-panel">
+          <div class="hero-content">
+            <h1>Bali</h1>
+            <p>
+              Provinsi Bali adalah sebuah provinsi di Indonesia yang terletak di
+              bagian barat Kepulauan Nusa Tenggara, di sebelah timur Pulau Jawa.
+              Ibu kota nya berada di <strong>Denpasar</strong>. Pulau ini sering
+              dijuluki dengan <strong>Pulau Dewata dan Pulau Seribu Pura</strong
+              >. Jumlah penduduk di Pulau Bali mencapai 4.375.263 jiwa pada
+              akhir tahun 2024 dan kepadatan penduduknya mencapai 747 jiwa/km²
+              (berdasarkan data 2020).
+            </p>
+            <div class="social-list">
+              <button class="social-btn" aria-label="Instagram">
+                <img src="page1/instagram.png" alt="Instagram" />
+              </button>
+              <button class="social-btn" aria-label="WhatsApp">
+                <img src="page1/whatsapp.png" alt="WhatsApp" />
+              </button>
+              <button class="social-btn" aria-label="X">
+                <img src="page1/twitter.png" alt="X" />
+              </button>
+            </div>
+          </div>
+          <div class="card-stack" aria-hidden="true">
+            <div class="info-card"></div>
+            <div class="info-card"></div>
+            <div class="info-card"></div>
+          </div>
+        </article>
+      </main>
+
+      <section id="culture" class="ethnic-section">
+        <h2 class="section-heading">Ethnic</h2>
+        <div class="ethnic-grid">
+          <div class="ethnic-item">
+            <article class="ethnic-card">
+              <img
+                src="page2/bali_aga_1.png"
+                alt="Bali Aga"
+              />
+              <h3>Bali Aga</h3>
+            </article>
+            <button class="card-btn">Explore More</button>
+          </div>
+          <div class="ethnic-item">
+            <article class="ethnic-card">
+              <img
+                src="page2/bali_aga_2.png"
+                alt="Bali Aga Tradition"
+              />
+              <h3>Bali Aga</h3>
+            </article>
+          </div>
+          <div class="ethnic-item">
+            <article class="ethnic-card">
+              <img
+                src="page2/bali_majapahit_1.png"
+                alt="Bali Majapahit"
+              />
+              <h3>Bali Majapahit</h3>
+            </article>
+            <button class="card-btn">Explore More</button>
+          </div>
+          <div class="ethnic-item">
+            <article class="ethnic-card">
+              <img
+                src="page2/bali_majapahit_2.png"
+                alt="Bali Majapahit Culture"
+              />
+              <h3>Bali Majapahit</h3>
+            </article>
+          </div>
+        </div>
+        <p class="ethnic-description">
+          Suku Bali, sebagai mayoritas di pulau tersebut, terbagi menjadi dua
+          kelompok utama: <strong>Bali Aga</strong> (penduduk asli di pegunungan)
+          dan <strong>Bali Majapahit</strong> (keturunan kerajaan Jawa). Selain itu,
+          terdapat juga komunitas <strong>Nyama Selam</strong> yang beragama Islam
+          tetapi masih mempertahankan berbagai tradisi Bali.
+        </p>
+      </section>
+
+      <section id="calendar" class="religion-section">
+        <div class="religion-img-wrapper">
+          <button class="slide-btn prev" aria-label="Foto sebelumnya">
+            &#8249;
+          </button>
+          <img
+            id="religionImage"
+            src="page3/foto_kiri.png"
+            alt="Umat Hindu Bali berdoa"
+          />
+          <button class="slide-btn next" aria-label="Foto selanjutnya">
+            &#8250;
+          </button>
+        </div>
+        <div class="religion-copy">
+          <h2>Religion</h2>
+          <p>
+            Agama Hindu Dharma dianut oleh sekitar 90% masyarakat Bali, dengan
+            filosofi inti <strong>Tri Hita Karana</strong> yang menekankan harmoni
+            antara manusia, Tuhan, dan alam. Keyakinan ini mencakup doktrin
+            <strong>Karma Phala</strong>, reinkarnasi, dan konsep
+            <strong>Atman</strong> (jiwa). Aspek spiritualnya mewujud dalam ritual
+            harian (<strong>yadnya</strong>), upacara adat, dan sesajen seperti
+            <strong>canang sari</strong> yang menjadi pemandangan khas Bali.
+          </p>
+        </div>
+      </section>
+
+      <section class="house-section">
+        <article class="house-panel">
+          <div class="house-visual">
+            <div class="house-image">
+              <img
+                src="page4/foto_kiri.png"
+                alt="Ilustrasi rumah adat Bali"
+              />
+            </div>
+            <button class="house-btn">Explore House</button>
+          </div>
+          <div class="house-copy">
+            <h2>
+              Traditional<br />
+              House
+            </h2>
+            <p>
+              Rumah adat Bali dirancang berdasarkan filosofi Asta Kosala-Kosali,
+              di mana setiap struktur dalam pekarangan memiliki fungsi spiritual
+              dan sosial. Kompleks rumah diawali dengan
+              <strong>Gapura Candi Bentar</strong> (pintu masuk) dan
+              <strong>Angkul-angkul</strong> (gerbang), lalu di dalamnya terdapat
+              <strong>Sanggah</strong> (tempat sembahyang), <strong>Bale Gede</strong> (balai pertemuan),
+              <strong>Bale Dauh</strong> (balai tidur), serta <strong>Aling-aling</strong> (penyekat) yang
+              berfungsi sebagai pembatas spiritual.
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <section class="clothes-section">
+        <div class="clothes-frame">
+          <div class="clothes-text">
+            <h2>
+              Traditional<br />
+              Clothes
+            </h2>
+            <p>
+              Pakaian adat Bali untuk pria terdiri dari <strong>kamen</strong> (kain bawahan),
+              <strong>saput</strong> (kain luaran), dan <strong>udeng</strong> (ikat kepala). Sementara wanita mengenakan
+              <strong>kebaya</strong> (atasan), kamen, serta <strong>selendang</strong> yang dipakai di pinggang.
+              Dalam kehidupan sehari-hari, busana ini biasanya dibuat dari bahan yang
+              lebih sederhana, namun untuk upacara adat, bahan dan detailnya jauh lebih
+              formal, lengkap, dan penuh hiasan.
+            </p>
+          </div>
+          <div class="clothes-image-wrap">
+            <img
+              src="page5/foto_kanan.png"
+              alt="Pakaian adat Bali"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="art-section" id="art">
+        <h2 class="art-heading">Art</h2>
+        <div class="art-slider">
+          <button class="slider-btn" id="artPrev" aria-label="Seni sebelumnya">
+            &#8249;
+          </button>
+          <div class="art-viewport">
+            <div class="art-track" id="artTrack">
+              <article class="art-card">
+                <div class="art-image"><img src="" alt="" /></div>
+                <h3></h3>
+                <span></span>
+                <p></p>
+              </article>
+              <article class="art-card">
+                <div class="art-image"><img src="" alt="" /></div>
+                <h3></h3>
+                <span></span>
+                <p></p>
+              </article>
+              <article class="art-card">
+                <div class="art-image"><img src="" alt="" /></div>
+                <h3></h3>
+                <span></span>
+                <p></p>
+              </article>
+              <article class="art-card">
+                <div class="art-image"><img src="" alt="" /></div>
+                <h3></h3>
+                <span></span>
+                <p></p>
+              </article>
+            </div>
+          </div>
+          <button class="slider-btn" id="artNext" aria-label="Seni selanjutnya">
+            &#8250;
+          </button>
+        </div>
+      </section>
+
+      <section class="ritual-section" id="ritual">
+        <h2 class="ritual-heading">Ritual</h2>
+        <div class="ritual-grid">
+          <article class="ritual-card">
+            <div class="ritual-text">
+              <h3>ngaben</h3>
+              <span>kremasi</span>
+            </div>
+            <div class="ritual-image">
+              <img
+                src="page7/ngaben.png"
+                alt="Ngaben - Kremasi"
+              />
+            </div>
+          </article>
+          <article class="ritual-card">
+            <div class="ritual-text">
+              <h3>melasti</h3>
+              <span>pencucian</span>
+            </div>
+            <div class="ritual-image">
+              <img
+                src="page7/melasti.png"
+                alt="Melasti - Pencucian"
+              />
+            </div>
+          </article>
+          <article class="ritual-card">
+            <div class="ritual-text">
+              <h3>odalan</h3>
+              <span>hari jadi pura</span>
+            </div>
+            <div class="ritual-image">
+              <img
+                src="page7/odalan.png"
+                alt="Odalan - Hari Jadi Pura"
+              />
+            </div>
+          </article>
+          <article class="ritual-card">
+            <div class="ritual-text">
+              <span>menikam diri</span>
+              <h3>ngurek</h3>
+            </div>
+            <div class="ritual-image">
+              <img
+                src="page7/ngureh.png"
+                alt="Ngurek - Menikam Diri"
+              />
+            </div>
+          </article>
+          <article class="ritual-card">
+            <div class="ritual-text">
+              <span>hari hening.</span>
+              <h3>nyepi</h3>
+            </div>
+            <div class="ritual-image">
+              <img
+                src="page7/nyepi.png"
+                alt="Nyepi - Hari Hening"
+              />
+            </div>
+          </article>
+          <article class="ritual-card">
+            <div class="ritual-text">
+              <span>potong gigi</span>
+              <h3>mepandes</h3>
+            </div>
+            <div class="ritual-image">
+              <img
+                src="page7/mepandes.png"
+                alt="Mepandes - Potong Gigi"
+              />
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      const searchBtn = document.getElementById("searchBtn");
+      const searchInput = document.getElementById("searchInput");
+
+      searchBtn.addEventListener("click", () => {
+        searchInput.classList.toggle("open");
+        if (searchInput.classList.contains("open")) {
+          searchInput.focus();
+        } else {
+          searchInput.value = "";
+        }
+      });
+
+      window.addEventListener("scroll", () => {
+        const header = document.querySelector(".main-header");
+        const scrolled = window.scrollY > 10;
+        header.style.boxShadow = scrolled
+          ? "0 15px 30px rgba(14, 43, 67, 0.12)"
+          : "0 12px 30px rgba(18, 55, 80, 0.08)";
+      });
+
+      const religionPhotos = [
+        "page3/foto_kiri.png",
+        "page3/foto_kiri_2.png",
+        "page3/foto_kiri_3.png"
+      ];
+      let religionIndex = 0;
+      const religionImgEl = document.getElementById("religionImage");
+      const prevBtn = document.querySelector(".slide-btn.prev");
+      const nextBtn = document.querySelector(".slide-btn.next");
+
+      function updateReligionImage(direction) {
+        religionIndex =
+          (religionIndex + direction + religionPhotos.length) %
+          religionPhotos.length;
+        religionImgEl.src = religionPhotos[religionIndex];
+      }
+
+      prevBtn.addEventListener("click", () => updateReligionImage(-1));
+      nextBtn.addEventListener("click", () => updateReligionImage(1));
+
+      const artData = [
+        {
+          title: "Tari Barong",
+          category: "Tari Tradisional",
+          description:
+            "Tari Barong adalah tarian tradisional Bali yang menggambarkan pertarungan antara kekuatan baik (Barong) dan kejahatan (Rangda), sering dipentaskan sebagai bagian dari ritual adat dan upacara keagamaan.",
+          image:
+            "page6/1. tari barong.png"
+        },
+        {
+          title: "Tari Kecak",
+          category: "Drama Tari",
+          description:
+            "Tari Kecak merupakan tarian khas Bali yang menampilkan puluhan penari lelaki duduk melingkar sambil meneriakkan \"cak-cak-cak\" untuk menggambarkan kisah Ramayana, tanpa iringan instrumen musik.",
+          image:
+            "page6/2. tari kecak.png"
+        },
+        {
+          title: "Tari Pendet",
+          category: "Tari Tradisional",
+          description:
+            "Tari Pendet adalah tarian Bali yang awalnya berfungsi sebagai tarian sakral untuk menyambut kehadiran para dewa di pura, kemudian berkembang menjadi tari penyambutan tamu.",
+          image:
+            "page6/3, tari pendet.png"
+        },
+        {
+          title: "Tari Legong",
+          category: "Tari Istana",
+          description:
+            "Tari Legong adalah tarian klasik Bali yang ditarikan oleh gadis-gadis remaja dengan gerakan luwes dan detail, biasanya diiringi gamelan semar pegulingan.",
+          image:
+            "page6/4. tari legong.png"
+        },
+        {
+          title: "Tari Sanghyang",
+          category: "Ritual",
+          description:
+            "Tari Sanghyang merupakan tarian sakral yang dipentaskan untuk mengusir roh jahat, di mana penarinya berada dalam kondisi trance (kesurupan) sebagai media komunikasi dengan dunia gaib.",
+          image:
+            "page6/5. tari sanghyang.png"
+        },
+        {
+          title: "Tari Rejang",
+          category: "Tari Upacara",
+          description:
+            "Tari Rejang adalah tarian suci untuk menyambut para dewa yang dipentaskan oleh perempuan-perempuan desa saat upacara keagamaan di pura atau lingkungan adat.",
+          image:
+            "page6/6. tari rejang.png"
+        },
+        {
+          title: "Gamelan Bali",
+          category: "Alat Musik",
+          description:
+            "Gamelan Bali adalah ensambel musik tradisional Bali yang berisi berbagai instrumen seperti gong, kendang, dan gangsa, terkenal dengan tempo yang cepat dan dinamis.",
+          image:
+            "page6/7. gamelan bali.png"
+        },
+        {
+          title: "Genggong",
+          category: "Alat Musik",
+          description:
+            "Genggong adalah alat musik tradisional Bali yang dimainkan dengan mulut dan terbuat dari pelepah enau, menghasilkan suara vibrasi yang unik.",
+          image:
+            "page6/8. gengong.png"
+        },
+        {
+          title: "Rindik",
+          category: "Alat Musik",
+          description:
+            "Rindik adalah alat musik tradisional Bali yang terbuat dari bilah-bilah bambu, dimainkan dengan teknik pukul berirama lembut dan sering dipakai dalam penyambutan atau hiburan.",
+          image:
+            "page6/9. rindik.png"
+        },
+        {
+          title: "Seni Ukir",
+          category: "Seni Rupa",
+          description:
+            "Seni ukir Bali adalah kerajinan pahatan kayu dengan motif tradisional seperti flora, fauna, dan tokoh mitologi, banyak digunakan pada bangunan pura dan rumah adat.",
+          image:
+            "page6/10. ukir.png"
+        },
+        {
+          title: "Seni Patung",
+          category: "Seni Patung",
+          description:
+            "Seni patung Bali adalah seni memahat batu atau kayu untuk membuat figur dewa, tokoh mitologi, atau ornamen dekoratif, mencerminkan nilai religius dan estetika Bali.",
+          image:
+            "page6/11. patung.png"
+        },
+        {
+          title: "Seni Lukis",
+          category: "Seni Lukis",
+          description:
+            "Seni lukis Bali merupakan gaya lukisan khas yang menampilkan cerita epos, kehidupan sehari-hari, atau pemandangan alam dengan warna-warna cerah dan detail simbolis.",
+          image:
+            "page6/12. lukis.png"
+        },
+        {
+          title: "Seni Anyaman",
+          category: "Kerajinan",
+          description:
+            "Seni anyaman Bali adalah kerajinan menganyam bambu, janur, atau daun lontar untuk membuat keranjang, hiasan upacara, dan perlengkapan rumah tangga tradisional.",
+          image:
+            "page6/13. anyaman.png"
+        }
+      ];
+
+      const artTrack = document.getElementById("artTrack");
+      const artCards = Array.from(artTrack.querySelectorAll(".art-card"));
+      let artIndex = 0;
+
+      function renderArtCards() {
+        artCards.forEach((card, idx) => {
+          const record = artData[(artIndex + idx) % artData.length];
+          const imgEl = card.querySelector("img");
+          imgEl.src = record.image;
+          imgEl.alt = record.title;
+          card.querySelector("h3").textContent = record.title;
+          card.querySelector("span").textContent = record.category;
+          card.querySelector("p").textContent = record.description;
+        });
+      }
+
+      const artPrev = document.getElementById("artPrev");
+      const artNext = document.getElementById("artNext");
+
+      artPrev.addEventListener("click", () => {
+        artIndex =
+          (artIndex - 1 + artData.length) % artData.length;
+        renderArtCards();
+      });
+
+      artNext.addEventListener("click", () => {
+        artIndex = (artIndex + 1) % artData.length;
+        renderArtCards();
+      });
+
+      renderArtCards();
+    </script>
+  </body>
+</html>
