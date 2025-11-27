@@ -15,10 +15,10 @@
   <style>
     @font-face {
         font-family: 'BaliFont';
-        src: url('fonts/bali.ttf') format('truetype');      
+        src: url('fonts/bali.ttf') format('truetype');
+        
       }
 
-    /* Semua judul besar */
     .section-heading,
     .religion-copy h2,
     .house-copy h2,
@@ -70,7 +70,6 @@
       backdrop-filter: blur(8px);
     }
 
-    /* MENU */
     .nav-menu {
       display: flex;
       gap: 40px;
@@ -78,37 +77,33 @@
       position: relative;
     }
 
-    /* DROPDOWN */
     .dropdown {
-      position: relative;       /* penting */
+      position: relative;       
     }
 
     .dropdown-btn {
       cursor: pointer;
     }
 
-    /* MENU TURUNAN */
     .dropdown-menu {
       display: none;
       position: absolute;
-      top: 100%;                /* tepat di bawah tombol */
+      top: 100%;                
       left: 0;
       background: white;
       padding: 10px 0;
       list-style: none;
       border-radius: 6px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      z-index: 9999;            /* CEGAH TERTUTUP */
+      z-index: 9999;           
       min-width: 180px;
     }
 
-    /* AGAR TETAP TERBUKA SAAT MOUSE TURUN */
     .dropdown:hover .dropdown-menu,
     .dropdown-menu:hover {
       display: block !important;
     }
 
-    /* ITEM */
     .dropdown-menu li {
       padding: 8px 20px;
       white-space: nowrap;
@@ -119,7 +114,6 @@
       text-decoration: none;
       display: block;
     }
-
 
     .page-wrapper {
       max-width: 1380px;
@@ -133,7 +127,6 @@
       letter-spacing: 4px;
       color: #0d2136;
     }
-
 
     nav ul {
       list-style: none;
